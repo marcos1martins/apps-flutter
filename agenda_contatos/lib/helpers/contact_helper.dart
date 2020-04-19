@@ -18,7 +18,7 @@ class ContactHelper {
   Database _db;
 
   Future<Database> get db async {
-    if (db != null) {
+    if (_db != null) {
       return _db;
     } else {
       _db = await initDb();
@@ -116,6 +116,9 @@ class Contact {
   String email;
   String phone;
   String img;
+
+  //construtor
+  Contact();
 
   //construtor
   Contact.fromMap(Map map) {
