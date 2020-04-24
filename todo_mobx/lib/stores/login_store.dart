@@ -45,10 +45,15 @@ abstract class _LoginStore with Store {
   @action
   Future<void> login() async {
     loading = true;
-
-    await Future.delayed(Duration(seconds: 2));
-
     loading = false;
     loggedIn = true;
+
+    email = "";
+    password = "";
+  }
+
+  @action
+  void logout(){
+    loggedIn = false;
   }
 }
